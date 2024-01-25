@@ -6,6 +6,7 @@
    
 
   </header>
-
-  <RouterView />
+  <div>
+    <RouterView />
+  </div>
 </template>
