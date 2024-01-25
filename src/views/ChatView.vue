@@ -1,3 +1,3 @@
 <template>
-    <div class="bg-black">Hello World</div>
+    <div class="bg-orange-200">Hello World</div>
 </template>
