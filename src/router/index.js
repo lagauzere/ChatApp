@@ -8,6 +8,11 @@ const router = createRouter({
       name: 'chat',
       component: ChatView
     },
+    {
+      path: '/Register',
+      name:'register',
+      component: ()=>import('@/views/RegisterView.vue')
+    }
   ]
 })
 
