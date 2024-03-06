@@ -2,7 +2,7 @@
     import { supabase } from '@/supabase'
     import { useRouter} from 'vue-router'
     import {ref} from 'vue'
-    import AppButton from  '@/components/AppButton.vue'
+    import AppButton from 
     const email = ref('')
     const password = ref('')
     const {push: routerPush} = useRouter()
@@ -33,6 +33,6 @@
         <label for="password">Mot de passe</label>
         <input type="password" id="password" v-model="password" class="p-2 bg-slate-500" required/>
       </div>
-      <AppButton></AppButton>
+      <button type="submit" class="p-2 mt-4 bg-blue-500 rounded-md">Se connecter un compte</button>
     </form>
   </template>
