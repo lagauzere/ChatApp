@@ -7,6 +7,7 @@
     import {insertMessage, fetchMessages, subscribeToMessage, messageList} from '@/api/messages'
 
     const messageText = ref('')
+    const messageContainer = ref(null)
 
     subscribeToMessage((messages) => {
         messageList.value = messages
@@ -17,6 +18,7 @@
 
     onMounted( async () => {
        await fetchMessages()
+       srollToBottom()
     })
 
     const addMessage = async () => {
@@ -29,13 +31,19 @@
     const deleteMessage= (id) => {
         messageList.value = messageList.value.filter( (message) => message.id != id)
     }
+    
+   
+
+   const srollToBottom= () =>{
+    messageContainer.value.scrollTop = messageContainer.value.scrollHeight
+   }
 
 </script>
 
 <template>
     <div class="flex flex-col h-full overflow-hidden">
         <AppNavbar></AppNavbar>
-        <div class="overflow-auto grow">
+        <div class="overflow-auto grow" ref="messageContainer">
             <div v-for="(message, index) in messageList" :key="index" class="p-4">
                 <ChatMessage @delete="deleteMessage" :message="message"></ChatMessage>
             </div>

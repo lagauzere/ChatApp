@@ -4,6 +4,7 @@
     import {useUserStore} from '@/stores/user'
     import {storeToRefs} from 'pinia'
     import { deleteMessage } from '@/api/messages';
+
     const props = defineProps({
         message:{
             type: Object,
@@ -34,7 +35,8 @@
         const date = new Date(props.message.created_at)
         return formatDate(date);
     });
-    //v-if="message.author === user"
+   
+
 </script>
 
 <template>
