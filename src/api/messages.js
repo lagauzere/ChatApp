@@ -28,3 +28,11 @@ export const subscribeToMessage = () => {
     }).subscribe()
     // { } ==> Accolade 
 }
+
+
+export const deleteMessage = async (message_id) =>{
+    const {error} = await supabase.from('messages')
+                                  .delete()
+                                  .eq('id',message_id)
+
+}
