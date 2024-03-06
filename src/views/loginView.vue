@@ -2,7 +2,6 @@
     import { supabase } from '@/supabase'
     import { useRouter} from 'vue-router'
     import {ref} from 'vue'
-    import AppButton from 
     const email = ref('')
     const password = ref('')
     const {push: routerPush} = useRouter()
